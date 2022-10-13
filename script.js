@@ -2,6 +2,7 @@
 const card = document.querySelector('.card-image')
 const miniature = document.querySelector('.cards-miniature')
 const info = document.querySelector('.info')
+const btn = document.querySelector('.btn')
 
 //fetching data from server
 const fetchData = () => {
@@ -51,4 +52,11 @@ miniature.onclick = function (event) {
         images[i].classList.remove('active')
     }
     event.target.setAttribute('class', 'active')
+}
+
+//changing button on click adding new class and text
+btn.onclick = function (event) {
+    event.target.removeAttribute('class')
+    event.target.setAttribute('class', 'added-to-cart')
+    event.target.textContent = 'Added ✔️'
 }
