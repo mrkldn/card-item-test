@@ -39,4 +39,16 @@ const fetchData = () => {
 //call function
 fetchData();
 
+//adding events to cards-miniature div
+miniature.onclick = function (event) {
 
+    //big image changes on click to mini images
+    document.getElementById('max-image').src = event.target.src
+
+    // adding class active to mini images so that we can see what image we click
+    let images = document.querySelectorAll('img');
+    for (let i = 1; i < images.length; i++) {
+        images[i].classList.remove('active')
+    }
+    event.target.setAttribute('class', 'active')
+}
